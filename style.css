@@ -10,7 +10,7 @@ body{ min-height:100vh; margin:0; font-family:"Barlow Semi Condensed",Arial,sans
 .choices-bg{ position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:0; pointer-events:none; -webkit-user-select:none; user-select:none }
 .choice{ position:absolute; width:110px; height:110px; border-radius:50%; border:16px solid rgba(0,0,0,0); outline:none; cursor:pointer; background:#fff; box-shadow:0 6px 0 0 rgba(0,0,0,.15); display:flex; justify-content:center; align-items:center; transition:transform .1s,box-shadow .1s,border-color .2s; z-index:1 }
 .choice img{ width:48px; height:48px; pointer-events:none }
-.choice:hover,.choice:focus{ box-shadow:0 8px 0 0 rgba(0,0,0,.25); filter:brightness(1.1) }
+.choice:hover,.choice:focus{ transform:scale(1.08); box-shadow:0 8px 0 0 rgba(0,0,0,.25); filter:brightness(1.1) }
 .choice--rock{ border-color:hsl(349,71%,52%) }
 .choice--paper{ border-color:hsl(230,89%,62%) }
 .choice--scissors{ border-color:hsl(39,89%,49%) }
@@ -51,4 +51,4 @@ body{ min-height:100vh; margin:0; font-family:"Barlow Semi Condensed",Arial,sans
 .result-choices{ gap:5rem }
 .modal-content{ min-width:400px; max-width:400px }
 }
-.picked--placeholder{ width:110px; height:110px; border-radius:50%; background:rgba(0,0,0,.12); border:none !important; box-shadow:0 6px 0 0 rgba(0,0,0,.1); margin:0 auto }
+.picked--placeholder{ width:110px; height:110px; border-radius:50%; background:rgba(0,0,0,.12); border:16px solid rgba(0,0,0,.08); box-shadow:0 6px 0 0 rgba(0,0,0,.1); margin:0 auto }
