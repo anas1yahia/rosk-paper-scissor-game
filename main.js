@@ -31,9 +31,9 @@ function getComputerChoice() {
 
 function getResult(user, computer) {
     if (user === computer) return 'draw';
-    if (winMap[user].includes(computer)) return 'win';
+    if (winMap[user] === computer) return 'win'; 
     return 'lose';
-  }
+}
 
   function renderPicked(div, choice) {
     div.className = `picked picked--${choice}`;
@@ -54,21 +54,26 @@ function getResult(user, computer) {
     resultSection.classList.add('active');
     resultSection.removeAttribute('hidden');
     choicesSection.style.display = 'none';
+    playAgainBtn.removeAttribute('hidden'); 
   }
   
   function showStep2(userChoice) {
-   
     renderPicked(userPickedDiv, userChoice);
-    computerPickedDiv.innerHTML = `<div class="picked picked--placeholder"></div>`;    resultMessage.textContent = '';
+    
+    computerPickedDiv.className = '';
+    computerPickedDiv.innerHTML = `<div class="picked--placeholder"></div>`;
+    resultMessage.textContent = '';
     resultSection.classList.add('active');
     resultSection.removeAttribute('hidden');
     choicesSection.style.display = 'none';
-  }
+    playAgainBtn.setAttribute('hidden', 'true'); 
+}
   
   function resetGame() {
     resultSection.classList.remove('active');
     resultSection.setAttribute('hidden', 'true');
     choicesSection.style.display = '';
+    playAgainBtn.setAttribute('hidden', 'true'); 
   }
   
   function updateScore(result) {
